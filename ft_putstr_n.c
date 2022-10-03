@@ -6,7 +6,7 @@
 /*   By: lagonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 19:18:32 by lagonzal          #+#    #+#             */
-/*   Updated: 2022/09/30 20:09:08 by lagonzal         ###   ########.fr       */
+/*   Updated: 2022/10/03 20:38:21 by lagonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ int	ft_putstr_n(char *s)
 	int	n;
 
 	n = -1;
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (s[++n])
 		write(1, &s[n], 1);
 	return (n);

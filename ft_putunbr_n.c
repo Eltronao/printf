@@ -6,8 +6,28 @@
 /*   By: lagonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 19:17:36 by lagonzal          #+#    #+#             */
-/*   Updated: 2022/09/22 19:17:39 by lagonzal         ###   ########.fr       */
+/*   Updated: 2022/10/03 19:56:51 by lagonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<unistd.h>
 
+int	ft_putunbr_n(unsigned int num, int *n)
+{
+	char	m;
+
+	if (num > 9)
+	{
+		ft_putunbr_n(num / 10, n);
+		m = (num % 10) + '0';
+		write(1, &m, 1);
+		*n += 1;
+	}
+	else
+	{
+		m = num + '0';
+		write(1, &m, 1);
+		*n += 1;
+	}
+	return (*n);
+}

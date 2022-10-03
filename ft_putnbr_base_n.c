@@ -6,7 +6,7 @@
 /*   By: lagonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 16:42:46 by lagonzal          #+#    #+#             */
-/*   Updated: 2022/09/30 20:54:02 by lagonzal         ###   ########.fr       */
+/*   Updated: 2022/10/03 20:29:13 by lagonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,31 @@
 #include <unistd.h>
 #include <string.h>
 
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	n;
+	
+	n = 0;
+	while (s1[n] && s2[n] && s1[n] == s2[n])
+		n++;
+	return(s1[n] - s2[n]);
+}
+
+int	ft_strlen(char *s1)
+{
+	int	n;
+
+	n = 0;
+	while (s1[n])
+		n++;
+	return (n);
+}
+
 void	ft_negative(int *nbr, int *n)
 {
 	write(1, "-", 1);
 	*nbr = *nbr * -1;
-	*n = *n + 1;
+	*n += 1;
 }
 
 void	ft_special(int *n, char *bases)
@@ -49,7 +69,7 @@ int	ft_putnbr_base_n(int nbr, char *bases, int *n)
 	if (-2147483647 - 1 == nbr)
 	{
 		ft_special(n, bases);
-		return (n);
+		return (*n);
 	}
 	if (nbr < 0)
 		ft_negative(&nbr, n);
@@ -66,14 +86,4 @@ int	ft_putnbr_base_n(int nbr, char *bases, int *n)
 		*n = *n + 1;
 	}
 	return (*n);
-}
-
-int	main(void)
-{
-	int	n;
-	n = 5;
-	n = ft_putnbr_base_n(-2147483648 , "0123456789ABCDEF", &n);
-	printf("\n");
-	printf("%d", n);
-	return (0);
 }
