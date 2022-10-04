@@ -6,7 +6,7 @@
 /*   By: lagonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:22:10 by lagonzal          #+#    #+#             */
-/*   Updated: 2022/10/03 21:38:05 by lagonzal         ###   ########.fr       */
+/*   Updated: 2022/10/04 14:57:40 by lagonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 #include<stdio.h>
 #include "ft_printf.h"
 
-static const char *g_hex = "0123456789abcdef";
-static const char *g_hexup = "0123456789ABCDEF";
+static const char	*g_hex = "0123456789abcdef";
+
+static const char	*g_hexup = "0123456789ABCDEF";
 
 int	ft_putchar(char c)
 {
@@ -69,17 +70,8 @@ int	ft_printf(char const *s, ...)
 			m = m + ft_select(s[n], arg_ptr) - 2;
 		}
 		else
-			ft_putchar(s[n]);
+			ft_putchar((unsigned char)s[n]);
 	}
 	va_end(arg_ptr);
 	return (n + m);
-}
-
-int	main(void)
-{
-	char	c = 'c';
-	char	*s = "string";
-	int		num = 425345;
-	ft_printf("pointer: %p\n", -1);
-	return (0);
 }

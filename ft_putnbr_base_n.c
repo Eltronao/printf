@@ -6,7 +6,7 @@
 /*   By: lagonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 16:42:46 by lagonzal          #+#    #+#             */
-/*   Updated: 2022/10/03 20:29:13 by lagonzal         ###   ########.fr       */
+/*   Updated: 2022/10/04 14:51:58 by lagonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 int	ft_strcmp(char *s1, char *s2)
 {
 	int	n;
-	
+
 	n = 0;
 	while (s1[n] && s2[n] && s1[n] == s2[n])
 		n++;
-	return(s1[n] - s2[n]);
+	return (s1[n] - s2[n]);
 }
 
 int	ft_strlen(char *s1)
