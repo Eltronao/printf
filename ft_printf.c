@@ -6,7 +6,7 @@
 /*   By: lagonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:22:10 by lagonzal          #+#    #+#             */
-/*   Updated: 2022/10/04 14:57:40 by lagonzal         ###   ########.fr       */
+/*   Updated: 2022/10/04 20:17:31 by lagonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	ft_printf(char const *s, ...)
 			m = m + ft_select(s[n], arg_ptr) - 2;
 		}
 		else
-			ft_putchar((unsigned char)s[n]);
+			ft_putchar(s[n]);
 	}
 	va_end(arg_ptr);
 	return (n + m);
